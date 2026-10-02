@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+/* Cinematic hero direction selected for the live site. */
+
+/* Home */
+.hero-cinematic{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(670px,53vw,790px);padding:95px 0 130px;color:#fff;background:#082d4c;overflow:hidden}
+.hero-cinematic::before{content:"";position:absolute;inset:0;z-index:-2;opacity:1;background-image:linear-gradient(90deg,rgba(4,36,61,.97) 0%,rgba(4,36,61,.83) 37%,rgba(4,36,61,.45) 71%,rgba(4,36,61,.61) 100%),linear-gradient(0deg,rgba(4,36,61,.89),transparent 37%),url('../images/marina-bay-evening.webp');background-size:cover;background-position:center,center,center 47%;pointer-events:none}
+.hero-cinematic::after{content:"";position:absolute;z-index:-1;left:51%;top:0;bottom:74px;width:1px;background:rgba(255,255,255,.15);transform:skew(-16deg);pointer-events:none}
+.hero-cinematic-content{position:relative;z-index:1}
+.hero-cinematic .overline{margin-bottom:31px;color:#b8dce8}
+.hero-cinematic h1{max-width:1120px;margin:0;font-size:clamp(4.8rem,7.7vw,7.7rem);font-weight:700;line-height:.97;letter-spacing:-.07em}
+.hero-cinematic h1 em{display:inline;color:#8be1ed;font-family:'Instrument Serif',Georgia,serif;font-size:1.03em;font-style:italic;font-weight:400;letter-spacing:-.025em;white-space:nowrap}
+.hero-cinematic .hero-body{max-width:570px;margin:37px 0 31px;color:#d7e8ef;font-size:16px;line-height:1.75}
+.hero-cinematic .button-dark{min-width:175px;background:#70dae9;color:#082d4c;border-radius:2px}
+.hero-cinematic .button-dark:hover{background:#fff}
+.hero-cinematic-rail{position:absolute;z-index:1;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:74px;padding:14px max(40px,calc((100% - var(--max))/2));border-top:1px solid rgba(255,255,255,.33);background:rgba(3,35,60,.7);color:#dcecf2;font-size:10px;font-weight:800;letter-spacing:.12em;white-space:nowrap}
+.hero-cinematic-rail>div{display:flex;gap:22px;color:#fff}
+.hero-cinematic-rail>div span::before{content:'+';margin-right:8px;color:#7ee0ed}
+
+/* Interior pages carry the same photographic and typographic language. */
+.section-hero.wrap{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;width:100%;max-width:none;min-height:535px;margin:0;padding:76px max(40px,calc((100% - var(--max))/2)) 85px;overflow:hidden;color:#fff;background:#082d4c}
+.section-hero::before{content:"";position:absolute;z-index:-2;inset:0;background-size:cover;background-position:center;pointer-events:none}
+.expertise-page .section-hero::before{background-image:linear-gradient(90deg,rgba(4,36,61,.96),rgba(4,36,61,.73) 55%,rgba(4,36,61,.44)),url('../images/engineers-reviewing-plans.webp');background-position:center,center 40%}
+.sectors-page .section-hero::before{background-image:linear-gradient(90deg,rgba(4,36,61,.97),rgba(4,36,61,.69) 60%,rgba(4,36,61,.42)),url('../images/marina-bay.webp');background-position:center,center 53%}
+.approach-page .section-hero::before{background-image:linear-gradient(90deg,rgba(4,36,61,.97),rgba(4,36,61,.7) 60%,rgba(4,36,61,.47)),url('../images/urban-systems.webp');background-position:center,center 55%}
+.section-hero::after{content:"";position:absolute;z-index:-1;left:52%;top:0;bottom:0;border-left:1px solid rgba(255,255,255,.17);transform:skew(-16deg);pointer-events:none}
+.section-hero .overline{color:#b8dce8;margin-bottom:30px}
+.section-hero-grid{display:block}
+.section-hero h1{max-width:1000px;margin:0;font-size:clamp(4.6rem,7vw,7rem);line-height:.97;letter-spacing:-.065em}
+.section-hero h1 em{display:inline;color:#89e0ed;font-family:'Instrument Serif',Georgia,serif;font-size:1.06em;font-style:italic;font-weight:400;letter-spacing:-.025em}
+.section-hero-grid>div{margin-top:26px}
+.section-hero-grid>div>p{max-width:570px;margin-bottom:24px;color:#d7e8ef;font-size:16px;line-height:1.75}
+.section-hero .button-dark{background:#70dae9;color:#082d4c;border-radius:2px}
+.section-hero .button-dark:hover{background:#fff}
+.expertise-page .page-feature-photo,.approach-page .page-feature-photo{display:none}
+.expertise-page .cap-list{padding-top:35px}
+
+/* Contact already has its own content structure. */
+.contact-page .contact-hero{position:relative;isolation:isolate;min-height:600px;padding:95px 0 100px;background:#082d4c}
+.contact-page .contact-hero::before{content:"";position:absolute;z-index:-1;inset:0;background-image:linear-gradient(90deg,rgba(4,36,61,.97),rgba(4,36,61,.77) 50%,rgba(4,36,61,.48)),url('../images/marina-bay-evening.webp');background-size:cover;background-position:center,center 48%}
+.contact-page .contact-hero-grid{display:block}
+.contact-page .contact-hero-copy{max-width:1050px}
+.contact-page .contact-hero h1{max-width:1040px;font-size:clamp(4.4rem,7vw,7rem);line-height:.98;letter-spacing:-.065em}
+.contact-page .contact-hero h1 em{display:inline;color:#89e0ed;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.06em;font-weight:400;letter-spacing:-.025em}
+.contact-page .contact-hero-image{display:none}
+.contact-hero-copy>p:not(.overline){max-width:570px;color:#d7e8ef}
+.contact-hero-link{padding:12px 20px;border:0;border-radius:2px;background:#70dae9;color:#082d4c;font-size:15px}
+.contact-hero-link span{color:#082d4c}
+.contact-hero-link:hover{background:#fff}
+
+@media(max-width:1100px){
+  .hero-cinematic-rail>div{gap:10px}.hero-cinematic-rail>div span{font-size:9px}
+  .section-hero.wrap{padding-inline:32px}
+}
+@media(max-width:760px){
+  .hero-cinematic{min-height:660px;padding:80px 0 105px}
+  .hero-cinematic::before{background-image:linear-gradient(90deg,rgba(4,36,61,.94),rgba(4,36,61,.69)),linear-gradient(0deg,rgba(4,36,61,.88),transparent 50%),url('../images/marina-bay-evening.webp');background-position:center,center,58% center}
+  .hero-cinematic h1{font-size:clamp(3.5rem,10vw,5.6rem)}
+  .hero-cinematic h1 em{white-space:normal}
+  .hero-cinematic .hero-body{max-width:530px;font-size:14px}
+  .hero-cinematic-rail{min-height:60px;padding-inline:20px}
+  .hero-cinematic-rail>div,.hero-cinematic-rail>span:last-child{display:none}
+  .section-hero.wrap{min-height:490px;padding:72px 20px 80px}
+  .section-hero h1{font-size:clamp(3.4rem,10vw,5.4rem)}
+  .section-hero-grid>div>p{font-size:14px}
+  .contact-page .contact-hero{min-height:535px;padding:75px 0 85px}
+  .contact-page .contact-hero h1{font-size:clamp(3.3rem,9.5vw,5.4rem)}
+}
+@media(max-width:520px){
+  .hero-cinematic{min-height:630px;padding:66px 0 95px}
+  .hero-cinematic h1{font-size:clamp(3.15rem,11.7vw,4.5rem)}
+  .hero-cinematic .overline,.section-hero .overline,.contact-hero-copy .overline{font-size:11px;letter-spacing:.12em}
+  .hero-cinematic .hero-body{margin-top:28px}
+  .section-hero.wrap{min-height:460px;padding:62px 20px 70px}
+  .section-hero h1{font-size:clamp(3.1rem,11vw,4.2rem)}
+  .section-hero h1 em{word-break:normal}
+  .contact-page .contact-hero{min-height:500px;padding:65px 0 76px}
+  .contact-page .contact-hero h1{font-size:clamp(3.1rem,10.5vw,4.2rem)}
+}

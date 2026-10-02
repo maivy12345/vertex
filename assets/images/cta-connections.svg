@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 390" fill="none" aria-hidden="true">
+  <style>
+    .orbit { transform-origin: 214px 194px; animation: orbit 28s linear infinite; }
+    .network { transform-origin: 214px 194px; animation: network-drift 10s ease-in-out infinite alternate; }
+    .signal { animation: signal-flow 8s linear infinite; }
+    .node { animation: node-pulse 4.8s ease-in-out infinite; }
+    .node-two { animation-delay: -1.2s; }
+    .node-three { animation-delay: -2.4s; }
+    .node-four { animation-delay: -3.6s; }
+    .core-ring { transform-origin: 214px 194px; animation: core-breathe 4.8s ease-in-out infinite; }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes network-drift { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+    @keyframes signal-flow { to { stroke-dashoffset: -48; } }
+    @keyframes node-pulse { 0%,100% { opacity: .55; } 35% { opacity: 1; } }
+    @keyframes core-breathe { 0%,100% { opacity: .55; transform: scale(.96); } 50% { opacity: 1; transform: scale(1.04); } }
+    @media (prefers-reduced-motion: reduce) { .orbit,.network,.signal,.node,.core-ring { animation: none; } }
+  </style>
+  <defs>
+    <linearGradient id="line" x1="34" y1="38" x2="364" y2="348" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8ADDEB" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#8ADDEB" stop-opacity=".8"/>
+    </linearGradient>
+    <linearGradient id="core" x1="160" y1="115" x2="274" y2="268" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F3D66"/>
+      <stop offset="1" stop-color="#082D4C"/>
+    </linearGradient>
+  </defs>
+  <circle cx="214" cy="194" r="157" stroke="#C9E4EE" stroke-opacity=".13"/>
+  <circle class="orbit" cx="214" cy="194" r="122" stroke="#C9E4EE" stroke-opacity=".18" stroke-dasharray="3 8"/>
+  <circle cx="214" cy="194" r="88" stroke="#C9E4EE" stroke-opacity=".18"/>
+  <path d="M214 16v356M24 194h384" stroke="#C9E4EE" stroke-opacity=".09"/>
+  <g class="network">
+    <path d="m73 106 141 88 129-99M73 106l53 181 88-93 129 99M126 287l217-192v198" stroke="url(#line)" stroke-width="1.5"/>
+    <path class="signal" d="m73 106 53 181 217 6" stroke="#8ADDEB" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="4 8"/>
+    <g class="node node-one"><circle cx="73" cy="106" r="10" fill="#082D4C" stroke="#8ADDEB" stroke-width="2"/><circle cx="73" cy="106" r="3" fill="#8ADDEB"/></g>
+    <g class="node node-two"><circle cx="343" cy="95" r="10" fill="#082D4C" stroke="#8ADDEB" stroke-width="2"/><circle cx="343" cy="95" r="3" fill="#8ADDEB"/></g>
+    <g class="node node-three"><circle cx="126" cy="287" r="10" fill="#082D4C" stroke="#8ADDEB" stroke-width="2"/><circle cx="126" cy="287" r="3" fill="#8ADDEB"/></g>
+    <g class="node node-four"><circle cx="343" cy="293" r="10" fill="#082D4C" stroke="#8ADDEB" stroke-width="2"/><circle cx="343" cy="293" r="3" fill="#8ADDEB"/></g>
+  </g>
+  <circle class="core-ring" cx="214" cy="194" r="70" fill="url(#core)" stroke="#8ADDEB" stroke-opacity=".72" stroke-width="2"/>
+  <circle cx="214" cy="194" r="57" stroke="#8ADDEB" stroke-opacity=".18"/>
+  <path d="m181 199 22 22 45-52" stroke="#8ADDEB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 61h44M321 333h49" stroke="#8ADDEB" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 68h25M343 340h27" stroke="#8ADDEB" stroke-opacity=".22" stroke-width="2" stroke-linecap="round"/>
+</svg>
