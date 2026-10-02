@@ -21,7 +21,7 @@
 .contact-section { padding: 90px 0 120px; }
 .contact-section-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, .45fr); align-items: end; gap: 40px; margin-bottom: 36px; }
 .contact-section-heading .overline { margin-bottom: 19px; }
-.contact-section-heading h2 { max-width: 750px; font-size: clamp(2.6rem, 4.1vw, 4.1rem); }
+.contact-section-heading h2 { max-width: 750px; font-size: clamp(2.21rem, 3.48vw, 3.48rem); }
 .contact-section-heading h2 em { color: #087e9b; }
 .contact-section-heading>p { max-width: 330px; margin: 0 0 4px; color: #527187; font-size: 15px; line-height: 1.75; }
 .contact-page .contact-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr); align-items: stretch; gap: 22px; padding: 0; }
@@ -43,7 +43,7 @@
 .contact-aside::after { content: ''; position: absolute; width: 360px; height: 360px; top: 76px; right: -190px; border: 1px solid rgba(115, 212, 227, .16); border-radius: 50%; box-shadow: 0 0 0 54px rgba(115, 212, 227, .035), 0 0 0 110px rgba(115, 212, 227, .025); pointer-events: none; }
 .contact-aside-top,.contact-details,.contact-aside-footer { position: relative; z-index: 1; }
 .contact-aside .overline { margin-bottom: 25px; color: #8ddce8; }
-.contact-page .contact-aside h2 { margin: 0 0 22px; color: #fff; font-size: clamp(2.2rem, 3vw, 3.4rem); }
+.contact-page .contact-aside h2 { margin: 0 0 22px; color: #fff; font-size: clamp(1.87rem, 2.55vw, 2.89rem); }
 .contact-aside h2 em { color: #67d7e7; }
 .contact-page .contact-aside-top>p:last-child { max-width: 380px; margin: 0; color: #c4dce8; font-size: 14px; line-height: 1.8; }
 .contact-page .contact-details { display: grid; gap: 0; margin-top: auto; padding: 35px 0 0; border: 0; }
@@ -80,7 +80,7 @@
   .contact-hero-image figcaption { inset-inline: 17px; bottom: 16px; font-size: 9px; }
   .contact-section { padding: 62px 0 75px; }
   .contact-section-heading { margin-bottom: 26px; }
-  .contact-section-heading h2 { font-size: clamp(2.4rem, 9vw, 3.2rem); }
+  .contact-section-heading h2 { font-size: clamp(2.04rem, 7.65vw, 2.72rem); }
   .contact-form-panel,.contact-page .contact-aside { padding: 25px 21px; }
   .contact-panel-top { margin-bottom: 26px; font-size: 10px; }
   .contact-panel-top span:last-child { max-width: 135px; text-align: right; }
