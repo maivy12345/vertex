@@ -12,6 +12,8 @@ em { font-weight: inherit; }
 :focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
 
 .site-header { position: fixed; inset: 0 0 auto; z-index: 20; height: var(--header-height); min-height: var(--header-height); padding-inline: max(40px,calc((100% - var(--max))/2)); gap: 32px; background: var(--white); }
+.brand { transition: opacity .2s,transform .2s; }
+.brand:hover { opacity: .78; transform: translateY(-1px); }
 .brand img { width: 144px; }
 .header-location { margin-left: 26px; font-size: 14px; font-weight: 800; }
 .main-nav { gap: clamp(18px,2.2vw,34px); font-size: 14px; font-weight: 700; white-space: nowrap; }
@@ -20,12 +22,15 @@ em { font-weight: inherit; }
 .nav-contact { display: inline-flex; align-items: center; margin-left: 4px; padding: 12px 18px; color: var(--white); background: var(--ink); border: 0; border-radius: 100px; }
 .main-nav .nav-contact:hover { color: var(--white); background: var(--blue); }
 .main-nav .nav-contact[aria-current="page"] { color: var(--white); background: var(--blue); }
+.menu-toggle { cursor: pointer; transition: color .2s,background .2s,border-color .2s; }
+.menu-toggle:hover { color: var(--white); border-color: var(--ink); background: var(--ink); }
 .overline { display: flex; align-items: center; gap: 13px; margin-bottom: 28px; font-size: 14px; font-weight: 800; letter-spacing: .16em; }
 .overline::before { content: ''; width: 23px; height: 2px; flex: none; background: var(--cyan); }
 .button { justify-content: center; gap: 12px; min-width: 170px; min-height: 52px; padding: 13px 21px; border-radius: 100px; font-family: inherit; font-size: 16px; font-weight: 800; line-height: 1.3; text-align: center; }
 .button::after { content: ''; display: inline-block; flex: none; width: 18px; height: 18px; background: currentColor; -webkit-mask: url('../images/arrow-up-right.svg') center/contain no-repeat; mask: url('../images/arrow-up-right.svg') center/contain no-repeat; transition: transform .2s ease; }
 .button:hover::after { transform: translate(3px,-3px); }
-.inline-link { display: inline-flex; align-items: center; padding-bottom: 7px; font-size: 14px; font-weight: 800; white-space: nowrap; }
+.inline-link { display: inline-flex; align-items: center; padding-bottom: 7px; font-size: 14px; font-weight: 800; white-space: nowrap; transition: color .2s; }
+.inline-link:hover { color: var(--cyan); }
 
 /* Home: stronger opening composition and clear light/dark rhythm. */
 .hero.wrap { width: 100%; max-width: none; margin: 0; padding: 82px max(40px,calc((100% - var(--max))/2)) 95px; }
@@ -100,6 +105,8 @@ em { font-weight: inherit; }
 .footer-main address,.footer-main>div>a:not(.brand),.footer-main>div>span:not(.footer-label) { margin-bottom: 9px; font-size: 14px; line-height: 1.65; }
 .footer-bottom { display: grid; grid-template-columns: 1fr auto; align-items: center; padding-top: 20px; font-size: 14px; }
 .footer-bottom nav { justify-self: end; gap: 22px; }
+.credits-page li a { color: var(--blue); text-decoration: underline; text-decoration-color: rgba(6,182,212,.55); text-underline-offset: 3px; transition: color .2s,text-decoration-color .2s; }
+.credits-page li a:hover { color: var(--cyan); text-decoration-color: var(--cyan); }
 
 /* Inner pages share the new type scale and card spacing. */
 .section-hero { padding: 105px 0 115px; }
