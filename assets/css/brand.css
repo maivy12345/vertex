@@ -95,29 +95,51 @@ ul { margin: 0; }
 .approach-proof span { display: inline-flex; gap: 9px; align-items: center; white-space: nowrap; }
 .approach-proof b { color: #7DE0D5; font-family: Sora, sans-serif; font-size: 11px; letter-spacing: .08em; }
 .control-loop-visual { position: relative; width: min(100%, 510px); aspect-ratio: 1; justify-self: end; }
-.loop-glow { position: absolute; inset: 17%; border-radius: 50%; background: rgba(20,184,166,.1); filter: blur(26px); }
+.loop-glow { position: absolute; inset: 17%; border-radius: 50%; background: rgba(20,184,166,.1); filter: blur(26px); animation: loopGlowBreath 5s ease-in-out 1.6s infinite; }
 .loop-rings { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .loop-grid-ring { fill: none; stroke: rgba(213,225,234,.14); stroke-width: 1; stroke-dasharray: 3 8; }
 .loop-grid-ring-inner { stroke: rgba(213,225,234,.1); stroke-dasharray: none; }
-.loop-progress { fill: none; stroke: url(#loopGradient); stroke-width: 3; stroke-linecap: round; filter: url(#loopGlow); }
-.loop-tail { fill: none; stroke: #7DE0D5; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.loop-pulse { fill: none; stroke: rgba(125,224,213,.23); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.loop-nodes circle { fill: #081E33; stroke: #7DE0D5; stroke-width: 3; }
-.loop-core { position: absolute; inset: 29%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(125,224,213,.26); border-radius: 50%; background: rgba(8,30,51,.76); box-shadow: inset 0 0 55px rgba(20,184,166,.07), 0 22px 70px rgba(0,0,0,.2); backdrop-filter: blur(10px); }
+.loop-progress, .loop-signal { fill: none; stroke: url(#loopGradient); stroke-width: 3; stroke-linecap: round; filter: url(#loopGlow); }
+.loop-progress { stroke-dasharray: 1; stroke-dashoffset: 1; animation: loopDraw 1.55s cubic-bezier(.2,.75,.25,1) .15s forwards; }
+.loop-signal { stroke: #E8FFFC; stroke-width: 5; stroke-dasharray: .018 .982; stroke-dashoffset: 0; opacity: 0; animation: loopSignalFlow 5s linear 1.7s infinite; }
+.loop-tail { fill: none; stroke: #7DE0D5; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: 0; animation: loopFadeIn .45s ease-out 1.45s forwards; }
+.loop-pulse { fill: none; stroke: rgba(125,224,213,.23); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: loopPulseDraw 5s ease-in-out 1.8s infinite; }
+.loop-nodes circle { fill: #081E33; stroke: #7DE0D5; stroke-width: 3; transform-box: fill-box; transform-origin: center; animation: loopNodePulse 5s ease-out 1.7s infinite; }
+.loop-nodes circle:nth-child(2) { animation-delay: 2.7s; }
+.loop-nodes circle:nth-child(3) { animation-delay: 3.7s; }
+.loop-nodes circle:nth-child(4) { animation-delay: 4.7s; }
+.loop-nodes circle:nth-child(5) { animation-delay: 5.7s; }
+.loop-core { position: absolute; inset: 29%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(125,224,213,.26); border-radius: 50%; background: rgba(8,30,51,.76); box-shadow: inset 0 0 55px rgba(20,184,166,.07), 0 22px 70px rgba(0,0,0,.2); backdrop-filter: blur(10px); animation: loopCoreIn .8s cubic-bezier(.2,.8,.2,1) .35s both, loopCoreBreath 5s ease-in-out 1.7s infinite; }
 .loop-core span, .loop-core small { color: #AFCAD5; font-family: Sora, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .loop-core strong { margin: -2px 0 -4px; color: var(--color-white); font-family: Sora, sans-serif; font-size: clamp(62px, 7vw, 88px); line-height: 1; letter-spacing: -.08em; }
-.loop-label { position: absolute; padding: 6px 10px; border: 1px solid rgba(125,224,213,.18); border-radius: 999px; color: #D9F4F1; background: rgba(8,30,51,.82); font-family: Sora, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; backdrop-filter: blur(8px); }
+.loop-label { position: absolute; padding: 6px 10px; border: 1px solid rgba(125,224,213,.18); border-radius: 999px; color: #D9F4F1; background: rgba(8,30,51,.82); font-family: Sora, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; backdrop-filter: blur(8px); opacity: 0; animation: loopLabelIn .45s ease-out forwards, loopLabelFocus 5s ease-in-out infinite; }
 .loop-label-1 { top: 3%; left: 50%; transform: translateX(-50%); }
 .loop-label-2 { top: 34%; right: -1%; }
 .loop-label-3 { right: 7%; bottom: 12%; }
 .loop-label-4 { bottom: 12%; left: 7%; }
 .loop-label-5 { top: 34%; left: -1%; }
-.control-loop-visual figcaption { position: absolute; right: 3%; bottom: 0; display: flex; align-items: center; gap: 12px; min-width: 230px; padding: 13px 16px; border: 1px solid rgba(125,224,213,.25); border-radius: 12px; color: var(--color-white); background: rgba(14,42,71,.92); box-shadow: 0 18px 45px rgba(0,0,0,.18); backdrop-filter: blur(10px); }
+.loop-label-1 { animation-delay: .55s, 1.7s; }
+.loop-label-2 { animation-delay: .67s, 2.7s; }
+.loop-label-3 { animation-delay: .79s, 3.7s; }
+.loop-label-4 { animation-delay: .91s, 4.7s; }
+.loop-label-5 { animation-delay: 1.03s, 5.7s; }
+.control-loop-visual figcaption { position: absolute; right: 3%; bottom: 0; display: flex; align-items: center; gap: 12px; min-width: 230px; padding: 13px 16px; border: 1px solid rgba(125,224,213,.25); border-radius: 12px; color: var(--color-white); background: rgba(14,42,71,.92); box-shadow: 0 18px 45px rgba(0,0,0,.18); backdrop-filter: blur(10px); animation: loopCaptionIn .6s cubic-bezier(.2,.8,.2,1) 1.05s both; }
 .signal-dot { width: 10px; height: 10px; flex: none; border-radius: 50%; background: #7DE0D5; box-shadow: 0 0 0 6px rgba(125,224,213,.1), 0 0 18px #14B8A6; animation: signalPulse 2.2s ease-out infinite; }
 .control-loop-visual figcaption b, .control-loop-visual figcaption small { display: block; }
 .control-loop-visual figcaption b { font-family: Sora, sans-serif; font-size: 12px; letter-spacing: .02em; }
 .control-loop-visual figcaption small { margin-top: 2px; color: #AFCAD5; font-size: 10px; }
 @keyframes signalPulse { 0%, 55%, 100% { box-shadow: 0 0 0 6px rgba(125,224,213,.1), 0 0 18px #14B8A6; } 25% { box-shadow: 0 0 0 10px rgba(125,224,213,0), 0 0 25px #14B8A6; } }
+@keyframes loopDraw { to { stroke-dashoffset: 0; } }
+@keyframes loopSignalFlow { 0% { stroke-dashoffset: .02; opacity: 0; } 8%, 92% { opacity: .95; } 100% { stroke-dashoffset: -1; opacity: 0; } }
+@keyframes loopPulseDraw { 0%, 7% { stroke-dashoffset: 1; opacity: .15; } 22%, 72% { stroke-dashoffset: 0; opacity: .72; } 88%, 100% { stroke-dashoffset: -1; opacity: .15; } }
+@keyframes loopNodePulse { 0%, 16%, 100% { transform: scale(1); filter: none; } 6% { transform: scale(1.45); fill: #7DE0D5; filter: drop-shadow(0 0 8px #7DE0D5); } }
+@keyframes loopLabelIn { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+@keyframes loopLabelFocus { 0%, 16%, 100% { border-color: rgba(125,224,213,.18); box-shadow: none; } 6% { border-color: rgba(125,224,213,.75); box-shadow: 0 0 18px rgba(20,184,166,.22); } }
+@keyframes loopCoreIn { from { opacity: 0; transform: scale(.86); } to { opacity: 1; transform: scale(1); } }
+@keyframes loopCoreBreath { 0%, 100% { box-shadow: inset 0 0 55px rgba(20,184,166,.07), 0 22px 70px rgba(0,0,0,.2); } 50% { box-shadow: inset 0 0 72px rgba(20,184,166,.13), 0 22px 70px rgba(0,0,0,.2), 0 0 26px rgba(20,184,166,.08); } }
+@keyframes loopGlowBreath { 0%, 100% { opacity: .55; transform: scale(.94); } 50% { opacity: 1; transform: scale(1.08); } }
+@keyframes loopFadeIn { to { opacity: 1; } }
+@keyframes loopCaptionIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
 .stat-strip { position: relative; z-index: 2; margin-top: -38px; }
 .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--color-white); border: 1px solid var(--color-surface); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
