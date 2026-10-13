@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; connect-src 'self' https://api.web3forms.com; font-src 'self' https://fonts.gstatic.com; form-action 'self' https://api.web3forms.com; frame-ancestors 'none'; frame-src https://maps.google.com; img-src 'self' data:; object-src 'none'; script-src 'self' 'sha256-WxjIA6WfFkEy41KgGQ57cNq9vB1zJEdBG97gJx9SeQ0='; style-src 'self' https://fonts.googleapis.com; upgrade-insecure-requests"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), geolocation=(), microphone=(), payment=(), usb=()"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    }
+  ]
+}

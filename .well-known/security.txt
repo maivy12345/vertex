@@ -1,0 +1,4 @@
+Contact: mailto:projects@vertex-sg.com
+Canonical: https://vertex-sg.com/.well-known/security.txt
+Expires: 2027-10-13T00:00:00Z
+Preferred-Languages: en
